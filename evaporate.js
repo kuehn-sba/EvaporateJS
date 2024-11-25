@@ -18,7 +18,8 @@
  *                                                                                                 *
  ***************************************************************************************************/
 
-(function () {
+// @fix for require/almond usage RIO
+define('evaporatejs', ['es6-promise'], function(Promise) { // @fix: es6-promise promise fix
   "use strict";
 
   var FAR_FUTURE = new Date('2060-10-22'),
@@ -2148,4 +2149,5 @@
     window.Evaporate = Evaporate;
   }
 
-}());
+  return Evaporate; // @fix: es6-promise promise fix
+});
